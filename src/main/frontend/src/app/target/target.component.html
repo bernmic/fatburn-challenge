@@ -1,0 +1,9 @@
+
+<nb-card *ngFor="let target of targets" [accent]="highlighted(target) ? 'primary' : null">
+  <nb-card-header>Tag {{target.day}} - {{target.date | date:'dd.MM.yyyy'}}</nb-card-header>
+  <nb-card-body>
+    Eiweiß: {{target.protein | number}}g<br/>
+    Kohlenhydrate: {{target.carbohydrates | number}}g<br/>
+    Fett: {{target.fat | number}}g<br/>
+  </nb-card-body>
+</nb-card>

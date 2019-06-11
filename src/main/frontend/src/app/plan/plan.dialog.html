@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header>Neuen Plan anlegen</nb-card-header>
+  <nb-card-body>
+    <input type="text" nbInput fullWidth placeholder="Name" #name>
+    <input type="number" nbInput fullWidth placeholder="Gewicht (kg)" #weight>
+    <input nbInput fullWidth placeholder="Startdatum" [nbDatepicker]="datepicker" #startdate>
+    <nb-datepicker format="DD.MM.YYYY" #datepicker></nb-datepicker>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="warning" (click)="cancelPressed()">Abbruch</button>
+    <button nbButton status="primary" (click)="okPressed(name.value, weight.value, startdate.value)">Speichern</button>
+  </nb-card-footer>
+</nb-card>
+

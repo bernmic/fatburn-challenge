@@ -1,0 +1,13 @@
+<nb-list>
+  <nb-list-item *ngFor="let plan of plans">
+    <a class="undecorated" [routerLink]="['/targets', plan.id]" routerLinkActive="active">
+      <nb-user
+        [name]="plan.user"
+        [title]="plan.startDate | date:'dd.MM.yyyy'"
+      ></nb-user>
+    </a>
+  </nb-list-item>
+  <nb-list-item>
+    <button nbButton fullWidth status="primary" (click)="openPlanDialog()"><nb-icon icon="folder-add"></nb-icon> Neuer Plan</button>
+  </nb-list-item>
+</nb-list>
