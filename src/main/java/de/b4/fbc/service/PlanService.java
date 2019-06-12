@@ -4,7 +4,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
-import javax.xml.ws.Response;
 
 import de.b4.fbc.model.Plan;
 import io.agroal.api.AgroalDataSource;

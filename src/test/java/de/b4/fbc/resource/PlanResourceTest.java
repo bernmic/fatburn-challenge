@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 public class PlanResourceTest {
-
+/*
     @Test
     public void testHelloEndpoint() {
         given()
@@ -17,5 +17,5 @@ public class PlanResourceTest {
              .statusCode(200)
              .body(is("hello"));
     }
-
+*/
 }
