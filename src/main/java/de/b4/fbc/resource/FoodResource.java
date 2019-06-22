@@ -2,6 +2,8 @@ package de.b4.fbc.resource;
 
 import de.b4.fbc.model.Food;
 import de.b4.fbc.service.FoodService;
+import de.b4.fbc.service.OpenFoodFactsService;
+import org.apache.commons.lang3.ArrayUtils;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 import org.jboss.resteasy.annotations.jaxrs.QueryParam;
 
@@ -19,20 +21,35 @@ public class FoodResource {
   @Inject
   FoodService foodService;
 
+  @Inject
+  OpenFoodFactsService openFoodFactsService;
+
   @GET
   public Food[] getFoods(@QueryParam("filter") String filter) {
     if (filter == null || filter.length() == 0) {
       return foodService.getFoods();
     }
-    return foodService.findFoodByName(filter);
+    Food[] internalFoods = foodService.findFoodByName(filter);
+    if (filter == null || filter.length() == 0) {
+      return internalFoods;
+    }
+    Food[] externalFoods = openFoodFactsService.searchFood(filter);
+    return ArrayUtils.addAll(internalFoods, externalFoods);
   }
 
   @GET
   @Path("{id}")
-  public Food getFood(@PathParam("id") Integer id) {
-    Food entity = foodService.getById(id);
+  public Food getFood(@PathParam("id") String id) {
+    Food entity = null;
+    try  {
+      entity = foodService.getById(Integer.parseInt(id));
+    } catch (NumberFormatException e) {}
+
     if (entity == null) {
-      throw new WebApplicationException("Food with id of " + id + " does not exist.", 404);
+      entity = openFoodFactsService.findFoodByCode(id.toString());
+      if (entity == null) {
+        throw new WebApplicationException("Food with id of " + id + " does not exist.", 404);
+      }
     }
     return entity;
   }

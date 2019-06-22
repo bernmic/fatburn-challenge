@@ -15,6 +15,7 @@
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-undertow:0.16.1" level="project" />
     <orderEntry type="library" name="Maven: io.undertow:undertow-servlet:2.0.19.Final" level="project" />
     <orderEntry type="library" name="Maven: io.undertow:undertow-core:2.0.19.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:1.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.xnio:xnio-nio:3.7.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.xnio:xnio-api:3.7.1.Final" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-resteasy-server-common:0.16.1" level="project" />
@@ -24,6 +25,7 @@
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-jsonb:0.16.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse:yasson:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: javax.json.bind:javax.json.bind-api:1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.quarkus:quarkus-jsonp:0.16.1" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-json-binding-provider:4.0.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
@@ -96,6 +98,8 @@
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: io.smallrye:smallrye-config:1.3.5" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.microprofile.config:microprofile-config-api:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.annotation.versioning:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: javax.enterprise:cdi-api:2.0.SP1" level="project" />
     <orderEntry type="library" name="Maven: javax.el:javax.el-api:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: javax.interceptor:javax.interceptor-api:1.2" level="project" />
@@ -134,7 +138,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.groovy:groovy-json:2.4.15" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:rest-assured-common:3.3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:xml-path:3.3.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-lang3:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.sling:org.apache.sling.javax.activation:0.1.0" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-agroal:0.16.1" level="project" />
@@ -187,29 +190,8 @@
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec:1.0.2.Final" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.10" level="project" />
-    <orderEntry type="library" name="Maven: io.quarkus:quarkus-smallrye-opentracing:0.16.1" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.microprofile.config:microprofile-config-api:1.3" level="project" />
-    <orderEntry type="library" name="Maven: org.osgi:org.osgi.annotation.versioning:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.microprofile.opentracing:microprofile-opentracing-api:1.3.1" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye:smallrye-opentracing:1.3.0" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing:opentracing-api:0.31.0" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing.contrib:opentracing-jaxrs2:0.4.1" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing:opentracing-noop:0.31.0" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing.contrib:opentracing-web-servlet-filter:0.2.3" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing.contrib:opentracing-concurrent:0.2.0" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing.contrib:opentracing-interceptors:0.0.4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.opentracing.contrib:opentracing-tracerresolver:0.1.5" level="project" />
-    <orderEntry type="library" name="Maven: io.quarkus:quarkus-jaeger:0.16.1" level="project" />
-    <orderEntry type="library" name="Maven: io.jaegertracing:jaeger-core:0.34.0" level="project" />
-    <orderEntry type="library" name="Maven: io.opentracing:opentracing-util:0.31.0" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.2" level="project" />
-    <orderEntry type="library" name="Maven: io.jaegertracing:jaeger-thrift:0.34.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.thrift:libthrift:0.12.0" level="project" />
-    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.9.0" level="project" />
-    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.13.0" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye:smallrye-metrics:1.1.3" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.microprofile.metrics:microprofile-metrics-api:1.1" level="project" />
-    <orderEntry type="library" name="Maven: io.quarkus:quarkus-jsonp:0.16.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:1.0.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-text:1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:3.10.2" level="project" />
   </component>
 </module>

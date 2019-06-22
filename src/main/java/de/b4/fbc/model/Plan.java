@@ -16,9 +16,9 @@ import java.time.LocalDate;
 @Cacheable
 public class Plan {
     @Id
-    @GeneratedValue(generator = "sequence-generator")
+    @GeneratedValue(generator = "plan-sequence-generator")
     @GenericGenerator(
-            name = "sequence-generator",
+            name = "plan-sequence-generator",
             strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
             parameters = {
                     @Parameter(name = "sequence_name", value = "plan_sequence"),

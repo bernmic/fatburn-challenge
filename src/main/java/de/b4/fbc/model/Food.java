@@ -12,9 +12,9 @@ import javax.persistence.*;
 @Cacheable
 public class Food {
   @Id
-  @GeneratedValue(generator = "sequence-generator")
+  @GeneratedValue(generator = "food-sequence-generator")
   @GenericGenerator(
-          name = "sequence-generator",
+          name = "food-sequence-generator",
           strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
           parameters = {
                   @org.hibernate.annotations.Parameter(name = "sequence_name", value = "food_sequence"),
@@ -24,6 +24,7 @@ public class Food {
   )
   private Integer id;
   private String name;
+  private String brand;
   private String barcode;
   private Double calories;
   private Double protein;
@@ -84,5 +85,13 @@ public class Food {
 
   public void setFat(Double fat) {
     this.fat = fat;
+  }
+
+  public String getBrand() {
+    return brand;
+  }
+
+  public void setBrand(String brand) {
+    this.brand = brand;
   }
 }

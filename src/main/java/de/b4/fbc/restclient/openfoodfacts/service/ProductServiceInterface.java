@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
 @RegisterRestClient
-public interface ProductService {
+public interface ProductServiceInterface {
   @GET
   @Path("/search.pl?search_simple=1&json=1&action=process")
   @Produces("application/json")
