@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {NbSearchService} from "@nebular/theme";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  value = '';
+
+  constructor(private searchService: NbSearchService, private router: Router) {
+
+    this.searchService.onSearchSubmit()
+      .subscribe((data: any) => {
+        this.value = data.term;
+        this.router.navigate(["/food"], {queryParams: {q: this.value}});
+      })
+
+  }
 }

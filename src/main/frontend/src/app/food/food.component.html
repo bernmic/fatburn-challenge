@@ -1,0 +1,40 @@
+<table [nbTreeGrid]="data">
+
+  <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+  <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+  <ng-container nbTreeGridColumnDef="name" [hideOn]="600">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Produkt</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.name}}</td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="brand" [hideOn]="1200">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Marke</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.brand}}</td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="calories" [hideOn]="600">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Karlorien</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.calories | number: '1.0-0'}}</td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="protein" [showOn]="600">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Eiweiß</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.protein | number: '1.1-1'}}</td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="carbohydrates" [showOn]="600">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Kohlenhydrate</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.carbohydrates | number: '1.1-1'}}</td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="fat" [showOn]="600">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Fett</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.fat | number: '1.1-1'}}</td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="barcode" [showOn]="1200">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Barcode</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.barcode}}</td>
+  </ng-container>
+</table>

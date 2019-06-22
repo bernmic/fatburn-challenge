@@ -10,7 +10,14 @@ import {
   NbSidebarModule,
   NbButtonModule,
   NbSidebarService,
-  NbListModule, NbUserModule, NbCardModule, NbIconModule, NbDialogModule, NbInputModule, NbDatepickerModule
+  NbListModule,
+  NbUserModule,
+  NbCardModule,
+  NbIconModule,
+  NbDialogModule,
+  NbInputModule,
+  NbDatepickerModule,
+  NbSearchModule, NbTreeGridModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { PlanComponent } from './plan/plan.component';
@@ -22,6 +29,8 @@ import {TargetService} from "./target/target.service";
 import {PlanDialogComponent} from "./plan/plan.dialog";
 import {FormsModule} from "@angular/forms";
 import {NbMomentDateModule} from "@nebular/moment";
+import { FoodComponent } from './food/food.component';
+import {FoodService} from "./food/food.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +38,8 @@ import {NbMomentDateModule} from "@nebular/moment";
     PlanComponent,
     TargetComponent,
     HomeComponent,
-    PlanDialogComponent
+    PlanDialogComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,
@@ -50,11 +60,14 @@ import {NbMomentDateModule} from "@nebular/moment";
     NbDialogModule.forRoot({}),
     NbInputModule,
     NbDatepickerModule.forRoot(),
-    NbMomentDateModule
+    NbMomentDateModule,
+    NbSearchModule,
+    NbTreeGridModule
   ],
   providers: [
     PlanService,
     TargetService,
+    FoodService,
     NbSidebarService
   ],
   bootstrap: [AppComponent],
