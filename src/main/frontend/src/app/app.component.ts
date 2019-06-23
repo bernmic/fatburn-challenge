@@ -15,7 +15,12 @@ export class AppComponent {
     this.searchService.onSearchSubmit()
       .subscribe((data: any) => {
         this.value = data.term;
-        this.router.navigate(["/food"], {queryParams: {q: this.value}});
+        var isnum = /^\d+$/.test(this.value);
+        if (isnum) {
+          this.router.navigate(["/food", this.value], {});
+        } else {
+          this.router.navigate(["/food"], {queryParams: {q: this.value}});
+      }
       })
 
   }

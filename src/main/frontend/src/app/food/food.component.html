@@ -14,7 +14,7 @@
   </ng-container>
 
   <ng-container nbTreeGridColumnDef="calories" [hideOn]="600">
-    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Karlorien</th>
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Kalorien</th>
     <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.calories | number: '1.0-0'}}</td>
   </ng-container>
 
@@ -35,6 +35,11 @@
 
   <ng-container nbTreeGridColumnDef="barcode" [showOn]="1200">
     <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Barcode</th>
-    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data.barcode}}</td>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row"><a [routerLink]="['/food', row.data.barcode]">{{row.data.barcode}}</a></td>
+  </ng-container>
+
+  <ng-container nbTreeGridColumnDef="thumb" [showOn]="1200">
+    <th nbTreeGridHeaderCell *nbTreeGridHeaderCellDef>Foto</th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row"><a [routerLink]="['/food', row.data.barcode]"><img height="50px" src="{{row.data.imageThumbUrl}}"></a></td>
   </ng-container>
 </table>

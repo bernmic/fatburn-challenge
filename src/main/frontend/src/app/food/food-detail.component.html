@@ -1,0 +1,32 @@
+<nb-layout>
+  <nb-layout-header><h1>{{food?.name}} <small *ngIf="food?.brand">von {{food?.brand}}</small></h1></nb-layout-header>
+  <nb-layout-column>
+    <img *ngIf="food?.imageUrl" src="{{food?.imageUrl}}">
+  </nb-layout-column>
+  <nb-layout-column>
+    <p>Werte je 100g</p>
+    <hr/>
+    <table>
+      <tr *ngIf="food?.calories">
+        <td>Energie</td>
+        <td align="right">{{food?.calories | number: '1.0-0'}} kcal</td>
+      </tr>
+      <tr *ngIf="food?.carbohydrates">
+        <td>Kohlenhydrate</td>
+        <td align="right">{{food?.carbohydrates | number: '1.1-1'}}g</td>
+      </tr>
+      <tr *ngIf="food?.protein">
+        <td>Eiweiß</td>
+        <td align="right">{{food?.protein | number: '1.1-1'}}g</td>
+      </tr>
+      <tr *ngIf="food?.fat">
+        <td>Fett</td>
+        <td align="right">{{food?.fat | number: '1.1-1'}}g</td>
+      </tr>
+    </table>
+    <hr/>
+    <a nbButton *ngIf="food?.link" [href]="food?.link" size="small" status="info" target="_blank">Herstellerseite</a>
+    &nbsp;
+    <a nbButton href="#" size="small" status="success">Heute gegessen</a>
+  </nb-layout-column>
+</nb-layout>

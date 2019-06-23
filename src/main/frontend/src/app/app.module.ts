@@ -31,6 +31,7 @@ import {FormsModule} from "@angular/forms";
 import {NbMomentDateModule} from "@nebular/moment";
 import { FoodComponent } from './food/food.component';
 import {FoodService} from "./food/food.service";
+import {FoodDetailComponent} from "./food/food-detail.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {FoodService} from "./food/food.service";
     TargetComponent,
     HomeComponent,
     PlanDialogComponent,
-    FoodComponent
+    FoodComponent,
+    FoodDetailComponent
   ],
   imports: [
     BrowserModule,

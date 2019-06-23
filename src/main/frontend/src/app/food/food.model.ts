@@ -7,6 +7,10 @@ export class Food {
     public calories: number,
     public protein: number,
     public carbohydrates: number,
-    public fat: string
+    public fat: string,
+    public link: string,
+    public imageUrl: string,
+    public imageSmallUrl: string,
+    public imageThumbUrl: string
   ) {}
 }

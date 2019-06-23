@@ -26,10 +26,14 @@ public class Food {
   private String name;
   private String brand;
   private String barcode;
+  private String link;
   private Double calories;
   private Double protein;
   private Double carbohydrates;
   private Double fat;
+  private String imageUrl;
+  private String imageSmallUrl;
+  private String imageThumbUrl;
 
   public Integer getId() {
     return id;
@@ -93,5 +97,37 @@ public class Food {
 
   public void setBrand(String brand) {
     this.brand = brand;
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+  public String getImageSmallUrl() {
+    return imageSmallUrl;
+  }
+
+  public void setImageSmallUrl(String imageSmallUrl) {
+    this.imageSmallUrl = imageSmallUrl;
+  }
+
+  public String getLink() {
+    return link;
+  }
+
+  public void setLink(String link) {
+    this.link = link;
+  }
+
+  public String getImageThumbUrl() {
+    return imageThumbUrl;
+  }
+
+  public void setImageThumbUrl(String imageThumbUrl) {
+    this.imageThumbUrl = imageThumbUrl;
   }
 }

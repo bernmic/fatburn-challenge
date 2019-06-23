@@ -73,7 +73,13 @@ public class OpenFoodFactsService {
     if (f.getName() == null || f.getName().length() == 0) {
       f.setName(p.getString("generic_name"));
     }
+    log.info("image_url = " + p.getString("image_url"));
     f.setBrand(p.getString("brands"));
+    f.setLink(p.getString("link"));
+    f.setImageUrl(createImageUrl(p, "400"));
+    f.setImageSmallUrl(createImageUrl(p, "200"));
+    f.setImageThumbUrl(createImageUrl(p, "100"));
+
     if (p.containsKey("nutriments")) {
       Document n = (Document)p.get("nutriments");
       if (n.containsKey("energy_100g")) {
@@ -97,4 +103,54 @@ public class OpenFoodFactsService {
     return o instanceof Double ? (Double)o : new Double((Integer)o);
   }
 
+  private String createImageUrl(Document p, String size) {
+    if (!p.containsKey("images")) {
+      return null;
+    }
+    String code = p.getString("code");
+    String url = "https://static.openfoodfacts.org/images/products/";
+    Document images = (Document)p.get("images");
+    if (code != null) {
+      if (code.length() == 13) {
+        url += (code.substring(0,3) + "/" + code.substring(3,6) + "/" + code.substring(6,9) + "/" + code.substring(9) + "/");
+      }
+      else {
+        url += (code + "/");
+      }
+      String front = getFrontImage(images, size);
+      if (front != null) {
+        return url + front;
+      }
+    }
+    return null;
+  }
+
+  private String getFrontImage(Document images, String size) {
+    String result = "";
+    Document front = null;
+    if (images.containsKey("front_de")) {
+      result += "front_de.";
+      front = (Document) images.get("front_de");
+    }
+    else if (images.containsKey("front")) {
+      result += "front.";
+      front = (Document) images.get("front");
+    }
+    else if (images.containsKey("front_en")) {
+      result += "front_en.";
+      front = (Document) images.get("front_en");
+    }
+    else if (images.containsKey("front_fr")) {
+      result += "front_fr.";
+      front = (Document) images.get("front_fr");
+    }
+    else {
+      return null;
+    }
+
+    if (front != null) {
+      result += (front.getString("rev") + "." + size + ".jpg");
+    }
+    return result;
+  }
 }
