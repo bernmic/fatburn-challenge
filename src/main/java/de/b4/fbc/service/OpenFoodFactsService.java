@@ -37,8 +37,8 @@ public class OpenFoodFactsService {
       and(
         text(query),
         or(
-          regex("product_name", ".*" + query + ".*"),
-          regex("generic_name", ".*" + query + ".*")
+          regex("product_name", query),
+          regex("generic_name", query)
         )
       )
     ).limit(50);
