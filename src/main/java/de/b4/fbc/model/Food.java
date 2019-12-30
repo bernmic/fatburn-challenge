@@ -3,6 +3,7 @@ package de.b4.fbc.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "food")
@@ -34,6 +35,9 @@ public class Food {
   private String imageUrl;
   private String imageSmallUrl;
   private String imageThumbUrl;
+
+  public Food() {
+  }
 
   public Integer getId() {
     return id;
@@ -129,5 +133,21 @@ public class Food {
 
   public void setImageThumbUrl(String imageThumbUrl) {
     this.imageThumbUrl = imageThumbUrl;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Food)) {
+      return false;
+    }
+
+    Food other = (Food) obj;
+
+    return Objects.equals(other.name, this.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.name);
   }
 }
